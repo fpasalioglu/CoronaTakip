@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="alidev.corona.covid19takip.MainActivity"
+    android:background="#D1D1D1"
+    android:id="@+id/coronaMainSwipeRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layoutTopHEAD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"
+                android:focusable="true"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text=" "
+                    android:textAlignment="center"
+                    android:textColor="@color/colorHighlights"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                    android:id="@+id/layoutTopCases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/back_generic"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Toplam Vaka"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorBlueDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewCases"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:shadowColor="@color/colorShadow"
+                        android:shadowDx="0"
+                        android:shadowDy="2"
+                        android:shadowRadius="1"
+                        android:text="00000"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorBlueDark"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutTopActive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/back_generic"
+                android:orientation="vertical"
+                android:padding="3dp" >
+
+                <TextView
+                    android:id="@+id/textViewActiveTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Aktif"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPurpleDark"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewActive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:shadowColor="@color/colorShadow"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="00000"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPurpleDark"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <LinearLayout
+                    android:id="@+id/layoutTopRecovered"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/back_generic"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/textViewRecoveredTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Taburcu Olanlar"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorGreenDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewRecovered"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:shadowColor="@color/colorShadow"
+                        android:shadowDx="0"
+                        android:shadowDy="2"
+                        android:shadowRadius="1"
+                        android:text="00000"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorGreenDark"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            <LinearLayout
+                        android:id="@+id/layoutTopDeaths"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/back_generic"
+                        android:orientation="vertical"
+                        android:padding="3dp" >
+
+                        <TextView
+                            android:id="@+id/textViewDeathsTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Ölümler"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorRedDark"
+                            android:textSize="13dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textViewDeaths"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:shadowColor="@color/colorShadow"
+                            android:shadowDx="0"
+                            android:shadowDy="2"
+                            android:shadowRadius="1"
+                            android:text="00000"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorRedDark"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <LinearLayout
+                android:id="@+id/layoutTopNewCases"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/back_generic"
+                android:orientation="vertical"
+                android:padding="3dp" >
+
+                <TextView
+                    android:id="@+id/textViewNewCasesTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Yeni Vakalar"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorNewDark"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewNewCases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:shadowColor="@color/colorShadow"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="00000"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorNewDark"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutTopNewDeaths"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/back_generic"
+                android:orientation="vertical"
+                android:padding="3dp" >
+
+                <TextView
+                    android:id="@+id/textViewNewDeathsTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Yeni Ölümler"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorNewDark"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewNewDeaths"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:shadowColor="@color/colorShadow"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="00000"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorNewDark"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    <LinearLayout
+        android:background="@drawable/back_generic"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:orientation="vertical"
+        android:weightSum="2">
+        <TextView
+            android:id="@+id/turkeyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="3dp"
+            android:text="Türkiye'deki Son Durum"
+            android:textAlignment="center"
+            android:textColor="@color/colorTitles"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:orientation="horizontal"
+                android:weightSum="4">
+                <LinearLayout
+                    android:id="@+id/turkeyCases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/back_generic"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/textViewNewCasesTitle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Yeni\nVakalar"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorHighlights"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/yenivakalar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:shadowColor="@color/colorShadow"
+                        android:shadowDx="0"
+                        android:shadowDy="2"
+                        android:shadowRadius="1"
+                        android:text="00000"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorHighlights"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/turkeyCases3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/back_generic"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/textViewNewCasesTitle3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Yeni\nÖlümler"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPurpleDark"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/yeniolumler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:shadowColor="@color/colorShadow"
+                        android:shadowDx="0"
+                        android:shadowDy="2"
+                        android:shadowRadius="1"
+                        android:text="00000"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPurpleDark"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/turkeyCases4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/back_generic"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/textViewNewCasesTitle4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Toplam\nVakalar"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorBlueDark"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/toplamvakalar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:shadowColor="@color/colorShadow"
+                        android:shadowDx="0"
+                        android:shadowDy="2"
+                        android:shadowRadius="1"
+                        android:text="00000"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorBlueDark"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layoutTopNewDeaths2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/back_generic"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/textViewNewDeathsTitle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Toplam\nÖlümler"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorRedDark"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/toplamolumler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:shadowColor="@color/colorShadow"
+                        android:shadowDx="0"
+                        android:shadowDy="2"
+                        android:shadowRadius="1"
+                        android:text="00000"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorRedDark"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/back_generic"
+                android:orientation="vertical"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/textCountriesHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="3dp"
+                    android:text="Ülkelere Göre Onaylanmış Vakalar"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorTitles"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/back_table_row"
+                    android:orientation="horizontal"
+                    android:weightSum="7.8">
+
+                    <TextView
+                        android:id="@+id/colCountryNameHEAD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.8"
+                        android:background="@drawable/back_table_cell"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="4dp"
+                        android:paddingBottom="2dp"
+                        android:text="Ülke"
+                        android:textColor="@color/colorBlueDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/colCasesHEAD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/back_table_cell"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="Vakalar"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorBlueDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/colNewCasesHEAD"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/back_table_cell"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="Yeni\nVakalar"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorNewDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/colRecoveredHEAD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/back_table_cell"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="Taburcu\nOlanlar"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorGreenDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/colDeathsHEAD"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/back_table_cell"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="Ölümler"
+
+                        android:textAlignment="center"
+                        android:textColor="@color/colorRedDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/colNewDeathsHEAD"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1.2"
+                        android:background="@drawable/back_table_cell"
+                        android:gravity="center_horizontal"
+                        android:padding="2dp"
+                        android:text="Yeni\nÖlümler"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorNewDark"
+                        android:textSize="13dp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="2dp">
+
+                    <ListView
+                        android:id="@+id/listViewCountries"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@+id/adView">
+                    </ListView>
+
+                    <com.google.android.gms.ads.AdView
+                        xmlns:ads="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/adView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"
+                        ads:adSize="BANNER"
+                        ads:adUnitId="ca-app-pub-7413097702925207/6366666178">
+                    </com.google.android.gms.ads.AdView>
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
